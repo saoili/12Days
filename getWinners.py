@@ -26,17 +26,10 @@ else:
     for name in winnerNames:
         print name
 
-
-        
 for name in winnerNames:
     names.remove(name)
-
-#for name in names:
-#    print "another name!: " + name
     
 with open ('names.csv','w') as namesFile:
     namesFile.write("\n".join(names))
-    #for name in names:
-    #    namesFile.write(name + "\n")
 
 log.close()
