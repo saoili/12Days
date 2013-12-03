@@ -7,8 +7,8 @@ with open('names.csv','r') as namesFile:
 with open('log.txt','r') as oldLogFile:
     oldLog = oldLogFile.read()
     
-log = open('log.txt','w')
-log.write(oldLog + '\nThere are ' + str(len(names)) + ' names in the file\n')
+log = open('log.txt','a')
+log.write('There are ' + str(len(names)) + ' names in the file\n')
 
 winners = 0
 while winners not in range (1,13):
@@ -16,7 +16,7 @@ while winners not in range (1,13):
     winners = int(raw_input(">"))
 
 winnerNames = random.sample(names, winners)
-log.write("Today's winners are " + str(winnerNames))
+log.write("Today's winners are " + str(winnerNames) + "\n\n")
 
 if winners == 1:
     print "The Winner Is:"
